@@ -1,0 +1,44 @@
+8 Minute Test, 0
+West Vidette, 1
+Citadel, 1
+Colosseum, 0
+Colosseum, 1
+Langille, 1
+Langille, 1
+Colosseum, 0
+Colosseum, 1
+Givens, 1
+Blackcap, 1
+Temple, 0
+Colosseum, 3
+Givens, 1
+Temple, 0
+Colosseum, 1
+Hurd, 0
+Givens, 2
+Columbine, 0
+Colosseum, 1
+Spencer, 0
+Henry, 2
+Vennacher, 0
+Colosseum, 1
+Dade, 1
+Dade, 1
+Vennacher, 0
+Colosseum, 1
+Giraud, 1
+Ian Campbell, 1
+Colosseum, 0
+Perkins, 1
+Emerald, 1
+Ian Campbell, 1
+Vennacher, 0
+Colosseum, 1
+Emerald, 1
+Ian Campbell, 1
+Vennacher, 0
+Colosseum, 1
+Emerald, 1
+Ian Campbell, 1
+Vennacher, 0
+Colosseum, 1
