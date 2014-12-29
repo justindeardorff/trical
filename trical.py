@@ -54,8 +54,12 @@ while len(startdate) != 8:
 	print "YYYYMMDD"
 	startdate = raw_input('>')
 
+print "Enter input file name, include filename extension"
+print "example.txt"
+wrkfile = raw_input('>')
+    
 #open input file
-infile = open("sample", "r")
+infile = open("sample.txt", "r")
 
 #declare counter variable for workout
 workoutnum = 0
