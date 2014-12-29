@@ -1,0 +1,40 @@
+Whorl, 1
+Whorl, 1
+Whorl, 2
+Fletcher, 1
+Fletcher, 1
+Fletcher, 2
+Virginia, 1
+Virginia, 1
+Virginia, 2
+Pettit, 1
+Pettit, 1
+Pettit, 2
+8 Minute Test, 1
+Mont Albert, 1
+Gibbs, 2
+Clingman’s, 1
+Mont Gosford, 1
+Warren, 2
+Gros Morne, 1
+Holt Hill, 1
+Koip, 2
+Jane Bald, 1
+Pettit, 1
+Pettit, 2
+8 Minute Test, 1
+Slide Mountain, 1
+North Twin Mountain, 0
+Hesperus, 2
+Jefferson, 1
+Table Rock, 1
+Mount Major, 0
+Hesperus, 2
+Garfield, 1
+Mount Field, 1
+Roan High, 0
+Hesperus, 2
+Mansfield, 1
+Pettit, 1
+Recess 60, 0
+Pettit, 2
