@@ -10,7 +10,7 @@ import datetime
 from datetime import timedelta
 
 #open output file
-outfile = open("trbasecal.ics", "w+")
+outfile = open("trcal.ics", "w+")
 
 #defining iCal pieces for header, footer, and events
 header = ["BEGIN:VCALENDAR\n",
@@ -59,7 +59,7 @@ print "example.txt"
 wrkfile = raw_input('>')
     
 #open input file
-infile = open("sample.txt", "r")
+infile = open(wrkfile, "r")
 
 #declare counter variable for workout
 workoutnum = 0
