@@ -10,7 +10,7 @@ import datetime
 from datetime import timedelta
 
 #open output file
-outfile = open("trcal.ics", "w+")
+outfile = open("trbasecal.ics", "w+")
 
 #defining iCal pieces for header, footer, and events
 header = ["BEGIN:VCALENDAR\n",
@@ -21,9 +21,10 @@ header = ["BEGIN:VCALENDAR\n",
 footer = ["END:VCALENDAR"]		  
 
 n1 = ["BEGIN:VEVENT\n",
-	  "DTSTAMP:20141229T154143Z\n",
-      "DTSTART;VALUE=DATE:"]
-      #after inserting this, add date and line terminator
+	  "DTSTAMP:"] #after inserting this, curdtstamp is added
+
+n5 = ["DTSTART;VALUE=DATE:"]
+      #after inserting this, add start date and line terminator
 
 n2 = ["DTEND;VALUE=DATE:"]
      #after inserting this, add date and line terminator
@@ -54,12 +55,8 @@ while len(startdate) != 8:
 	print "YYYYMMDD"
 	startdate = raw_input('>')
 
-print "Enter input file name, include filename extension"
-print "example.txt"
-wrkfile = raw_input('>')
-    
 #open input file
-infile = open(wrkfile, "r")
+infile = open("sample", "r")
 
 #declare counter variable for workout
 workoutnum = 0
@@ -68,7 +65,10 @@ for line in infile:
 	name, days = line.split(",",1) #splits infile into two variables called name and days
 	name = str(name)
 	days = int(days)+1
-	outfile.writelines(n1)
+	curdtstamp = datetime.datetime.now().strftime("%Y%m%d"+"T"+"%H%M%S"+"Z") #calcs current DTSTAMP
+	outfile.writelines(n1) #writes beginning of event block
+	outfile.write(curdtstamp + "\n")
+	outfile.writelines(n5)
 	outfile.write(startdate + "\n")
 	outfile.writelines(n2)
 	outfile.write(startdate + "\n")
@@ -93,6 +93,7 @@ print "iCal file created. %i workouts added to calendar." %workoutnum
 
 
 #exit
+
 
 
 
