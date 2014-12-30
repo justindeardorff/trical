@@ -9,35 +9,28 @@ import re
 import datetime
 from datetime import timedelta
 
-#open output file
-outfile = open("trcal.ics", "w+")
-
 #defining iCal pieces for header, footer, and events
 header = ["BEGIN:VCALENDAR\n",
-		  "VERSION:2.0\n",
-		  "X-WR-CALNAME: TrainerRoad.com LVBase\n",
-		  "CALSCALE:GREGORIAN\n"]
+	"VERSION:2.0\n",
+	"X-WR-CALNAME: TrainerRoad.com LVBase\n",
+	"CALSCALE:GREGORIAN\n"]
 
 footer = ["END:VCALENDAR"]		  
 
-n1 = ["BEGIN:VEVENT\n",
-	  "DTSTAMP:20141229T154143Z\n",
-      "DTSTART;VALUE=DATE:"]
-      #after inserting this, add date and line terminator
+n1 = 	["BEGIN:VEVENT\n",
+	"DTSTAMP:"] #after inserting this, curdtstamp is added
 
-n2 = ["DTEND;VALUE=DATE:"]
-     #after inserting this, add date and line terminator
+n5 = 	["DTSTART;VALUE=DATE:"]
+      	#after inserting this, add start date and line terminator
 
-n3 = ["SUMMARY:"]
-      #after inserting this, add workout name and line terminator
+n2 = 	["DTEND;VALUE=DATE:"]
+     	#after inserting this, add date and line terminator
+
+n3 = 	["SUMMARY:"]
+      	#after inserting this, add workout name and line terminator
        
-n4 = ["END:VEVENT\n"]
+n4 = 	["END:VEVENT\n"]
 	
-	
-			  
-#generate ical header info and write to output file
-outfile.writelines(header)	
-
 
 #prompt user for plan start date
 print "Please enter plan desired start date."
@@ -61,6 +54,12 @@ wrkfile = raw_input('>')
 #open input file
 infile = open(wrkfile, "r")
 
+#open output file
+outfile = open("trbasecal.ics", "w+")
+
+#generate ical header info and write to output file
+outfile.writelines(header)
+
 #declare counter variable for workout
 workoutnum = 0
 
@@ -68,7 +67,10 @@ for line in infile:
 	name, days = line.split(",",1) #splits infile into two variables called name and days
 	name = str(name)
 	days = int(days)+1
-	outfile.writelines(n1)
+	curdtstamp = datetime.datetime.now().strftime("%Y%m%d"+"T"+"%H%M%S"+"Z") #calcs current DTSTAMP
+	outfile.writelines(n1) #writes beginning of event block
+	outfile.write(curdtstamp + "\n")
+	outfile.writelines(n5)
 	outfile.write(startdate + "\n")
 	outfile.writelines(n2)
 	outfile.write(startdate + "\n")
@@ -93,6 +95,7 @@ print "iCal file created. %i workouts added to calendar." %workoutnum
 
 
 #exit
+
 
 
 
