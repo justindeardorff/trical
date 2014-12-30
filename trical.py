@@ -9,36 +9,28 @@ import re
 import datetime
 from datetime import timedelta
 
-#open output file
-outfile = open("trbasecal.ics", "w+")
-
 #defining iCal pieces for header, footer, and events
 header = ["BEGIN:VCALENDAR\n",
-		  "VERSION:2.0\n",
-		  "X-WR-CALNAME: TrainerRoad.com LVBase\n",
-		  "CALSCALE:GREGORIAN\n"]
+	"VERSION:2.0\n",
+	"X-WR-CALNAME: TrainerRoad.com LVBase\n",
+	"CALSCALE:GREGORIAN\n"]
 
 footer = ["END:VCALENDAR"]		  
 
-n1 = ["BEGIN:VEVENT\n",
-	  "DTSTAMP:"] #after inserting this, curdtstamp is added
+n1 = 	["BEGIN:VEVENT\n",
+	"DTSTAMP:"] #after inserting this, curdtstamp is added
 
-n5 = ["DTSTART;VALUE=DATE:"]
-      #after inserting this, add start date and line terminator
+n5 = 	["DTSTART;VALUE=DATE:"]
+      	#after inserting this, add start date and line terminator
 
-n2 = ["DTEND;VALUE=DATE:"]
-     #after inserting this, add date and line terminator
+n2 = 	["DTEND;VALUE=DATE:"]
+     	#after inserting this, add date and line terminator
 
-n3 = ["SUMMARY:"]
-      #after inserting this, add workout name and line terminator
+n3 = 	["SUMMARY:"]
+      	#after inserting this, add workout name and line terminator
        
-n4 = ["END:VEVENT\n"]
+n4 = 	["END:VEVENT\n"]
 	
-	
-			  
-#generate ical header info and write to output file
-outfile.writelines(header)	
-
 
 #prompt user for plan start date
 print "Please enter plan desired start date."
@@ -55,8 +47,18 @@ while len(startdate) != 8:
 	print "YYYYMMDD"
 	startdate = raw_input('>')
 
+print "Enter input file name, include filename extension"
+print "example.txt"
+wrkfile = raw_input('>')
+    
 #open input file
-infile = open("sample", "r")
+infile = open(wrkfile, "r")
+
+#open output file
+outfile = open("trbasecal.ics", "w+")
+
+#generate ical header info and write to output file
+outfile.writelines(header)
 
 #declare counter variable for workout
 workoutnum = 0
